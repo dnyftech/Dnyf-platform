@@ -3,7 +3,11 @@ class GitHubIntegration {
     constructor(username = 'dnyftetch') {
         this.username = username;
         this.baseURL = 'https://api.github.com';
+<<<<<<< HEAD
         this.cacheDuration = 5 * 60 * 1000;
+=======
+        this.cacheDuration = 5 * 60 * 1000; // 5 minutes
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.init();
     }
 
@@ -23,6 +27,10 @@ class GitHubIntegration {
         const cached = localStorage.getItem(cacheKey);
         const timestamp = localStorage.getItem(`${cacheKey}_time`);
         
+<<<<<<< HEAD
+=======
+        // Return cached data if valid
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         if (cached && timestamp && Date.now() - timestamp < this.cacheDuration) {
             return JSON.parse(cached);
         }
@@ -41,6 +49,10 @@ class GitHubIntegration {
             
             const data = await response.json();
             
+<<<<<<< HEAD
+=======
+            // Cache the data
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             localStorage.setItem(cacheKey, JSON.stringify(data));
             localStorage.setItem(`${cacheKey}_time`, Date.now());
             
@@ -48,6 +60,10 @@ class GitHubIntegration {
         } catch (error) {
             console.error('GitHub fetch error:', error);
             
+<<<<<<< HEAD
+=======
+            // Return cached data as fallback
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             if (cached) {
                 return JSON.parse(cached);
             }
@@ -85,6 +101,10 @@ class GitHubIntegration {
         this.stats.totalStars = this.repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
         this.stats.totalForks = this.repos.reduce((sum, repo) => sum + repo.forks_count, 0);
         
+<<<<<<< HEAD
+=======
+        // Update UI if app exists
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         if (window.app && window.app.updateStats) {
             window.app.updateStats(this.repos);
         }
@@ -101,6 +121,10 @@ class GitHubIntegration {
             }
         });
         
+<<<<<<< HEAD
+=======
+        // Update UI if app exists
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         if (window.app) {
             if (window.app.renderSkills) {
                 window.app.renderSkills(this.languages);
@@ -113,11 +137,19 @@ class GitHubIntegration {
 
     async loadAllData() {
         try {
+<<<<<<< HEAD
+=======
+            // Fetch data
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             const [user, repos] = await Promise.all([
                 this.getUser(),
                 this.getRepositories()
             ]);
             
+<<<<<<< HEAD
+=======
+            // Render projects
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             if (window.app && window.app.renderProjects) {
                 window.app.renderProjects(this.repos);
             }
@@ -130,6 +162,10 @@ class GitHubIntegration {
     }
 
     async refreshData() {
+<<<<<<< HEAD
+=======
+        // Clear cache
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const keys = Object.keys(localStorage);
         keys.forEach(key => {
             if (key.startsWith('github_')) {
@@ -137,10 +173,18 @@ class GitHubIntegration {
             }
         });
         
+<<<<<<< HEAD
+=======
+        // Reload data
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.init();
         return await this.loadAllData();
     }
 
+<<<<<<< HEAD
+=======
+    // Search and filter methods
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
     searchProjects(query) {
         if (!query || !this.repos) return this.repos || [];
         
@@ -170,13 +214,28 @@ class GitHubIntegration {
     }
 }
 
+<<<<<<< HEAD
 let github = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
+=======
+// Initialize GitHub integration
+let github = null;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Wait for app to initialize
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
     setTimeout(async () => {
         github = new GitHubIntegration('dnyftetch');
         window.github = github;
         
+<<<<<<< HEAD
         await github.loadAllData();
     }, 1000);
 });
+=======
+        // Load GitHub data
+        await github.loadAllData();
+    }, 1000);
+});
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

@@ -1,7 +1,11 @@
 // PWA Handler
 class PWAHandler {
     constructor() {
+<<<<<<< HEAD
         this.deferredPrompt = true;
+=======
+        this.deferredPrompt = null;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.init();
     }
 
@@ -12,6 +16,10 @@ class PWAHandler {
     }
 
     setupInstallPrompt() {
+<<<<<<< HEAD
+=======
+        // PWA Install Prompt
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const pwaPrompt = document.getElementById('pwaPrompt');
         const installPWA = document.getElementById('installPWA');
         const dismissPWA = document.getElementById('dismissPWA');
@@ -21,6 +29,10 @@ class PWAHandler {
             e.preventDefault();
             this.deferredPrompt = e;
             
+<<<<<<< HEAD
+=======
+            // Show prompt after 10 seconds
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             setTimeout(() => {
                 if (pwaPrompt && !localStorage.getItem('pwaPromptDismissed')) {
                     pwaPrompt.classList.add('show');
@@ -102,6 +114,10 @@ class PWAHandler {
     }
 
     setupOnlineOffline() {
+<<<<<<< HEAD
+=======
+        // Update UI based on network status
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const updateStatus = () => {
             const isOnline = navigator.onLine;
             const offlineIndicator = document.getElementById('offlineIndicator');
@@ -118,10 +134,21 @@ class PWAHandler {
         window.addEventListener('online', updateStatus);
         window.addEventListener('offline', updateStatus);
         
+<<<<<<< HEAD
+=======
+        // Initial status
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         updateStatus();
     }
 }
 
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     window.pwaHandler = new PWAHandler();
 });
+=======
+// Initialize PWA handler
+document.addEventListener('DOMContentLoaded', () => {
+    window.pwaHandler = new PWAHandler();
+});
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

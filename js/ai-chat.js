@@ -18,14 +18,25 @@ class AITerminal {
         const sendBtn = document.getElementById('sendCommand');
         
         if (input && sendBtn) {
+<<<<<<< HEAD
             sendBtn.addEventListener('click', () => this.processCommand());
             
+=======
+            // Send on button click
+            sendBtn.addEventListener('click', () => this.processCommand());
+            
+            // Send on Enter key
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             input.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     this.processCommand();
                 }
             });
             
+<<<<<<< HEAD
+=======
+            // Command history with arrow keys
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             let historyIndex = -1;
             input.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowUp') {
@@ -54,6 +65,7 @@ class AITerminal {
         
         if (!command) return;
         
+<<<<<<< HEAD
         this.commandHistory.push(command);
         this.commandCount++;
         
@@ -63,6 +75,25 @@ class AITerminal {
         input.value = '';
         
         this.updateStats();
+=======
+        // Add to history
+        this.commandHistory.push(command);
+        this.commandCount++;
+        
+        // Display user command
+        this.displayUserCommand(command);
+        
+        // Process command
+        this.executeCommand(command);
+        
+        // Clear input
+        input.value = '';
+        
+        // Update stats
+        this.updateStats();
+        
+        // Save history
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.saveHistory();
     }
 
@@ -110,6 +141,7 @@ class AITerminal {
             case 'help':
                 this.showHelp();
                 break;
+<<<<<<< HEAD
             case 'projects':
                 this.showProjects();
                 break;
@@ -128,23 +160,67 @@ class AITerminal {
             case 'github':
                 this.openGitHub();
                 break;
+=======
+                
+            case 'projects':
+                this.showProjects();
+                break;
+                
+            case 'skills':
+                this.showSkills();
+                break;
+                
+            case 'about':
+                this.showAbout();
+                break;
+                
+            case 'contact':
+                this.showContact();
+                break;
+                
+            case 'clear':
+                this.clearTerminal();
+                break;
+                
+            case 'github':
+                this.openGitHub();
+                break;
+                
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             case 'ai research':
             case 'research':
                 this.showAIResearch();
                 break;
+<<<<<<< HEAD
             case 'termux':
                 this.showTermuxInfo();
                 break;
             case 'status':
                 this.showStatus();
                 break;
+=======
+                
+            case 'termux':
+                this.showTermuxInfo();
+                break;
+                
+            case 'status':
+                this.showStatus();
+                break;
+                
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             default:
                 this.handleUnknownCommand(cmd);
         }
     }
 
     showHelp() {
+<<<<<<< HEAD
         const helpText = `<strong>Available commands:</strong><br><br>
+=======
+        const helpText = `
+<strong>Available commands:</strong><br><br>
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 • <code>projects</code> - List GitHub projects<br>
 • <code>skills</code> - Show technology stack<br>
 • <code>about</code> - About DNYF TETCH<br>
@@ -154,7 +230,12 @@ class AITerminal {
 • <code>termux</code> - Termux projects info<br>
 • <code>status</code> - System status<br>
 • <code>clear</code> - Clear terminal<br>
+<<<<<<< HEAD
 • <code>help</code> - Show this help`;
+=======
+• <code>help</code> - Show this help
+        `;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         
         this.displayAIResponse(helpText);
     }
@@ -177,6 +258,10 @@ class AITerminal {
             this.displayAIResponse(response);
         } else {
             this.displayAIResponse('Loading projects from GitHub...');
+<<<<<<< HEAD
+=======
+            // Try to load if not already loaded
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             if (window.github && typeof window.github.loadAllData === 'function') {
                 window.github.loadAllData().then(() => {
                     this.showProjects();
@@ -197,7 +282,12 @@ class AITerminal {
             topLanguages.forEach(([lang, count]) => {
                 const barLength = Math.min(Math.floor(count * 20 / Math.max(...Object.values(languages))), 20);
                 const bar = '█'.repeat(barLength) + '░'.repeat(20 - barLength);
+<<<<<<< HEAD
                 response += `<strong>${lang}</strong><br>${bar} ${count} repos<br><br>`;
+=======
+                response += `<strong>${lang}</strong><br>`;
+                response += `${bar} ${count} repos<br><br>`;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             });
             
             this.displayAIResponse(response);
@@ -207,24 +297,44 @@ class AITerminal {
     }
 
     showAbout() {
+<<<<<<< HEAD
         const aboutText = `<strong>DNYF TETCH - AI Research & Development</strong><br><br>
+=======
+        const aboutText = `
+<strong>DNYF TETCH - AI Research & Development</strong><br><br>
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 <strong>Specializing in:</strong><br>
 • <strong>AI Research</strong> - Machine Learning, Neural Networks, NLP<br>
 • <strong>Android Development</strong> - Kotlin, Java, Termux integration<br>
 • <strong>Termux Projects</strong> - CLI tools, automation scripts<br>
 • <strong>Server Development</strong> - Backend APIs, deployment, DevOps<br>
 • <strong>Terminal Tools</strong> - Custom terminal emulators, CLI apps<br><br>
+<<<<<<< HEAD
 All projects are open-source and available on GitHub.`;
+=======
+All projects are open-source and available on GitHub.
+        `;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         
         this.displayAIResponse(aboutText);
     }
 
     showContact() {
+<<<<<<< HEAD
         const contactText = `<strong>Contact Information:</strong><br><br>
 • <strong>GitHub</strong>: <a href="https://github.com/dnyftetch" target="_blank">dnyftetch</a><br>
 • <strong>Email</strong>: contact@dnyftetch.com<br>
 • <strong>Website</strong>: <a href="https://dnyf-tetch-ai-website.netlify.app" target="_blank">dnyf-tetch-ai-website.netlify.app</a><br><br>
 For collaboration on AI research or development projects.`;
+=======
+        const contactText = `
+<strong>Contact Information:</strong><br><br>
+• <strong>GitHub</strong>: <a href="https://github.com/dnyftetch" target="_blank">dnyftetch</a><br>
+• <strong>Email</strong>: contact@dnyftetch.com<br>
+• <strong>Website</strong>: <a href="https://dnyf-tetch-ai-website.netlify.app" target="_blank">dnyf-tetch-ai-website.netlify.app</a><br><br>
+For collaboration on AI research or development projects.
+        `;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         
         this.displayAIResponse(contactText);
     }
@@ -247,19 +357,34 @@ For collaboration on AI research or development projects.`;
     }
 
     showAIResearch() {
+<<<<<<< HEAD
         const researchText = `<strong>AI Research Areas:</strong><br><br>
+=======
+        const researchText = `
+<strong>AI Research Areas:</strong><br><br>
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 • <strong>Machine Learning</strong> - Neural networks, deep learning models<br>
 • <strong>Natural Language Processing</strong> - Text generation, analysis<br>
 • <strong>Computer Vision</strong> - Image recognition, processing<br>
 • <strong>Reinforcement Learning</strong> - AI agents, optimization<br>
 • <strong>Model Deployment</strong> - Server setup, API development<br><br>
+<<<<<<< HEAD
 Research focuses on practical applications and open-source tools.`;
+=======
+Research focuses on practical applications and open-source tools.
+        `;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         
         this.displayAIResponse(researchText);
     }
 
     showTermuxInfo() {
+<<<<<<< HEAD
         const termuxText = `<strong>Termux Projects:</strong><br><br>
+=======
+        const termuxText = `
+<strong>Termux Projects:</strong><br><br>
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 Termux is a terminal emulator and Linux environment for Android.<br><br>
 <strong>Project Types:</strong><br>
 • CLI tools for Android development<br>
@@ -267,7 +392,12 @@ Termux is a terminal emulator and Linux environment for Android.<br><br>
 • AI modules for Termux<br>
 • Server setup on Android<br>
 • Educational tools for developers<br><br>
+<<<<<<< HEAD
 Explore Termux projects on GitHub.`;
+=======
+Explore Termux projects on GitHub.
+        `;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         
         this.displayAIResponse(termuxText);
     }
@@ -277,14 +407,24 @@ Explore Termux projects on GitHub.`;
         const time = new Date().toLocaleTimeString();
         const date = new Date().toLocaleDateString();
         
+<<<<<<< HEAD
         let status = `<strong>System Status:</strong><br><br>
+=======
+        let status = `
+<strong>System Status:</strong><br><br>
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 • <strong>Network</strong>: ${isOnline ? '🟢 Online' : '🔴 Offline'}<br>
 • <strong>Time</strong>: ${time}<br>
 • <strong>Date</strong>: ${date}<br>
 • <strong>AI Status</strong>: 🟢 Operational<br>
 • <strong>GitHub API</strong>: ${window.github ? '🟢 Connected' : '🟡 Connecting...'}<br>
 • <strong>PWA</strong>: ${'serviceWorker' in navigator ? '🟢 Available' : '🔴 Not available'}<br><br>
+<<<<<<< HEAD
 All systems ${isOnline ? 'operational' : 'limited - offline mode'}.`;
+=======
+All systems ${isOnline ? 'operational' : 'limited - offline mode'}.
+        `;
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         
         this.displayAIResponse(status);
     }
@@ -332,6 +472,13 @@ All systems ${isOnline ? 'operational' : 'limited - offline mode'}.`;
     }
 }
 
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     window.aiTerminal = new AITerminal();
 });
+=======
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.aiTerminal = new AITerminal();
+});
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

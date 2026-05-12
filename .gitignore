@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ==========================================
 # DNYF PLATFORM — GLOBAL GITIGNORE
 # ==========================================
@@ -12,22 +13,35 @@ jspm_packages/
 # ------------------------------------------
 # Logs
 # ------------------------------------------
+=======
+# Dependencies
+node_modules/
+vendor/
+
+# Logs
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+<<<<<<< HEAD
 lerna-debug.log*
 
 # ------------------------------------------
 # Runtime / PID files
 # ------------------------------------------
+=======
+
+# Runtime data
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 pids/
 *.pid
 *.seed
 *.pid.lock
 
+<<<<<<< HEAD
 # ------------------------------------------
 # Environment Variables
 # ------------------------------------------
@@ -39,6 +53,14 @@ pids/
 # ------------------------------------------
 # Build Outputs
 # ------------------------------------------
+=======
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build outputs
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 dist/
 build/
 out/
@@ -46,6 +68,7 @@ coverage/
 .cache/
 .tmp/
 temp/
+<<<<<<< HEAD
 tmp/
 release/
 debug/
@@ -83,10 +106,29 @@ ios/.symlinks/
 # ------------------------------------------
 # Python
 # ------------------------------------------
+=======
+
+# Vite
+.vite/
+
+# React / Next / Nuxt
+.next/
+.nuxt/
+
+# Android / Mobile
+*.apk
+*.aab
+*.keystore
+android/app/build/
+ios/build/
+
+# Python
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+<<<<<<< HEAD
 *.so
 
 venv/
@@ -125,10 +167,21 @@ cache/
 # ------------------------------------------
 # Termux / Linux Shell
 # ------------------------------------------
+=======
+venv/
+.venv/
+env/
+
+# PHP / Composer
+composer.lock
+
+# Termux
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 .termux/
 storage/
 downloads/
 
+<<<<<<< HEAD
 .bash_history
 .zsh_history
 .histfile
@@ -223,3 +276,37 @@ apps/**/.env
 # ------------------------------------------
 *.local
 *.secret
+=======
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+*.orig
+
+# Secrets / Keys
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+
+# Misc
+*.bak
+*.tmp
+*.cache
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

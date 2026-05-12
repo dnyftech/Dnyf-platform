@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "Dnyf Tech | AI Research",
   "short_name": "dnyf",
+=======
+  "name": "DNYF TETCH | AI Research",
+  "short_name": "DNYF TETCH",
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
   "description": "AI Research, Termux Projects, Android Development & Server Creation",
   "start_url": "/",
   "display": "standalone",
@@ -51,4 +56,8 @@
   ],
   "categories": ["development", "productivity", "education"],
   "lang": "en-US"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

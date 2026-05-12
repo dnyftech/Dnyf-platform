@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DNYF TETCH - AI Research & Development Website
 
 A modern, fully-featured portfolio website with AI integration, GitHub integration, PWA support, and more.
@@ -338,3 +339,32 @@ Your DNYF TETCH website is fully configured and ready to deploy.
 **Built with:** HTML, CSS, JavaScript, GitHub API, Chart.js, Font Awesome
 **Deployed on:** [Choose your platform]
 **Version:** 1.0.0
+=======
+# DNYF TETCH AI Research Website
+
+Professional website showcasing AI research, Android development, Termux projects, and server development.
+
+## Live Website
+Visit: https://dnyftetch.github.io/dnyf-tetch-ai-website/
+
+## Features
+- Modern responsive design
+- AI Research portfolio
+- Android development showcase
+- Termux projects display
+- Contact form
+- PWA ready
+
+## Technologies
+- HTML5, CSS3, JavaScript
+- Progressive Web App (PWA)
+- GitHub Pages hosting
+
+## Setup
+1. Clone repository
+2. Open index.html in browser
+3. Or visit GitHub Pages URL
+
+## License
+MIT License
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

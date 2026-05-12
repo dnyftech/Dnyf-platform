@@ -5,6 +5,10 @@ class App {
     }
 
     init() {
+<<<<<<< HEAD
+=======
+        // Initialize components
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.initMobileMenu();
         this.initThemeToggle();
         this.initSmoothScroll();
@@ -13,7 +17,11 @@ class App {
         this.initPWA();
         this.updateCurrentYear();
         
+<<<<<<< HEAD
         console.log('Dnyf tech App initialized');
+=======
+        console.log('DNYF TETCH App initialized');
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
     }
 
     initMobileMenu() {
@@ -28,6 +36,10 @@ class App {
                     : '<i class="fas fa-bars"></i>';
             });
             
+<<<<<<< HEAD
+=======
+            // Close menu when clicking a link
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     menu.classList.remove('show');
@@ -48,6 +60,10 @@ class App {
                 this.setTheme(newTheme);
             });
             
+<<<<<<< HEAD
+=======
+            // Set initial icon
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             const savedTheme = localStorage.getItem('theme') || 'dark';
             this.setTheme(savedTheme);
         }
@@ -87,6 +103,7 @@ class App {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
+<<<<<<< HEAD
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData.entries());
                 
@@ -94,6 +111,19 @@ class App {
                 
                 form.reset();
                 
+=======
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Show success message
+                this.showNotification('Thank you! Your message has been sent.');
+                
+                // Reset form
+                form.reset();
+                
+                // Log data (in real app, send to server)
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
                 console.log('Contact form data:', data);
             });
         }
@@ -104,12 +134,20 @@ class App {
         if (!terminal) return;
         
         const commands = [
+<<<<<<< HEAD
             { cmd: 'whoami', out: 'dnyf_tech' },
+=======
+            { cmd: 'whoami', out: 'dnyf_tetch' },
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             { cmd: 'pwd', out: '/home/dnyf/research' },
             { cmd: 'ls -la', out: 'total 24\ndrwxr-xr-x  8 dnyf  staff   256B  ...  .git\ndrwxr-xr-x  4 dnyf  staff   128B  ...  ai-research\ndrwxr-xr-x  5 dnyf  staff   160B  ...  android-projects\ndrwxr-xr-x  3 dnyf  staff    96B  ...  termux-tools' },
             { cmd: 'cd ai-research', out: '' },
             { cmd: 'git status', out: 'On branch main\nYour branch is up to date with \'origin/main\'.\nnothing to commit, working tree clean' },
+<<<<<<< HEAD
             { cmd: 'echo "Welcome to DNYF tech"', out: 'Welcome to DNYF tech' }
+=======
+            { cmd: 'echo "Welcome to DNYF TETCH"', out: 'Welcome to DNYF TETCH' }
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         ];
         
         let output = '';
@@ -128,6 +166,10 @@ class App {
             delay += 300;
         });
         
+<<<<<<< HEAD
+=======
+        // Add blinking cursor
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         setTimeout(() => {
             output += `<div class="terminal-line"><span class="prompt">$</span> <span class="command"></span><span class="blinking-cursor">█</span></div>`;
             terminal.innerHTML = output;
@@ -168,6 +210,10 @@ class App {
     }
 
     showNotification(message, type = 'success') {
+<<<<<<< HEAD
+=======
+        // Create notification element
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.innerHTML = `
@@ -175,6 +221,10 @@ class App {
             <span>${message}</span>
         `;
         
+<<<<<<< HEAD
+=======
+        // Add styles
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         notification.style.cssText = `
             position: fixed;
             top: 20px;
@@ -188,11 +238,18 @@ class App {
             gap: 10px;
             z-index: 9999;
             animation: slideIn 0.3s ease;
+<<<<<<< HEAD
             font-weight: 600;
+=======
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         `;
         
         document.body.appendChild(notification);
         
+<<<<<<< HEAD
+=======
+        // Remove after 3 seconds
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         setTimeout(() => {
             notification.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => {
@@ -208,6 +265,10 @@ class App {
         }
     }
 
+<<<<<<< HEAD
+=======
+    // GitHub integration helper methods
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
     updateStats(repos) {
         if (!repos || !repos.length) return;
         
@@ -215,6 +276,10 @@ class App {
         const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
         const totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
         
+<<<<<<< HEAD
+=======
+        // Update UI elements
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const updateElement = (id, value) => {
             const el = document.getElementById(id);
             if (el) el.textContent = value;
@@ -227,6 +292,10 @@ class App {
         updateElement('footerRepos', totalRepos);
         updateElement('footerStars', totalStars);
         
+<<<<<<< HEAD
+=======
+        // Update latest project
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         if (repos.length > 0) {
             const latestRepo = repos[0];
             updateElement('latestProject', latestRepo.name);
@@ -241,6 +310,10 @@ class App {
         const container = document.getElementById('projectsGrid');
         if (!container) return;
         
+<<<<<<< HEAD
+=======
+        // Clear loading state
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const loading = container.querySelector('.loading');
         if (loading) {
             loading.style.display = 'none';
@@ -251,8 +324,15 @@ class App {
             return;
         }
         
+<<<<<<< HEAD
         container.innerHTML = '';
         
+=======
+        // Clear container
+        container.innerHTML = '';
+        
+        // Render each project
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         repos.forEach(repo => {
             const project = document.createElement('div');
             project.className = 'project-card';
@@ -284,15 +364,27 @@ class App {
         
         if (!container || !languages) return;
         
+<<<<<<< HEAD
+=======
+        // Clear containers
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         container.innerHTML = '';
         if (footerContainer) {
             footerContainer.innerHTML = '';
         }
         
+<<<<<<< HEAD
+=======
+        // Get top languages
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const topLanguages = Object.entries(languages)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 8);
         
+<<<<<<< HEAD
+=======
+        // Render skills grid
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         topLanguages.forEach(([lang, count]) => {
             const skill = document.createElement('div');
             skill.className = 'skill-item';
@@ -305,6 +397,10 @@ class App {
             `;
             container.appendChild(skill);
             
+<<<<<<< HEAD
+=======
+            // Add to footer
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             if (footerContainer) {
                 const tag = document.createElement('span');
                 tag.textContent = lang;
@@ -317,6 +413,10 @@ class App {
         const ctx = document.getElementById('languageChart');
         if (!ctx || !languages) return;
         
+<<<<<<< HEAD
+=======
+        // Get top 5 languages
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const topLanguages = Object.entries(languages)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 5);
@@ -327,6 +427,10 @@ class App {
         const data = topLanguages.map(([, count]) => count);
         const colors = ['#3ddc84', '#00d9ff', '#b967ff', '#ffbd2e', '#ff5f56'];
         
+<<<<<<< HEAD
+=======
+        // Destroy existing chart if it exists
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         if (this.languageChart) {
             this.languageChart.destroy();
         }
@@ -361,10 +465,18 @@ class App {
     }
 }
 
+<<<<<<< HEAD
+=======
+// Initialize app when DOM is loaded
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 document.addEventListener('DOMContentLoaded', () => {
     window.app = new App();
 });
 
+<<<<<<< HEAD
+=======
+// Add animation keyframes
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
@@ -406,6 +518,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+<<<<<<< HEAD
+=======
+// Search functionality
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
@@ -443,4 +559,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038

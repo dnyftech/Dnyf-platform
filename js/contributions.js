@@ -17,6 +17,10 @@ class GitHubContributions {
 
     async fetchContributions() {
         try {
+<<<<<<< HEAD
+=======
+            // Fetch recent events
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             const response = await fetch(`https://api.github.com/users/${this.username}/events?per_page=100`);
             
             if (!response.ok) {
@@ -37,12 +41,20 @@ class GitHubContributions {
     }
 
     processEvents(events) {
+<<<<<<< HEAD
+=======
+        // Process events to get daily contributions
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const contributionsMap = {};
         
         events.forEach(event => {
             const date = new Date(event.created_at).toISOString().split('T')[0];
             contributionsMap[date] = (contributionsMap[date] || 0) + 1;
             
+<<<<<<< HEAD
+=======
+            // Count by type
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             switch(event.type) {
                 case 'PushEvent':
                     this.stats.commits += event.payload.commits?.length || 0;
@@ -59,6 +71,10 @@ class GitHubContributions {
             }
         });
         
+<<<<<<< HEAD
+=======
+        // Convert to array and generate last 365 days
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const today = new Date();
         this.contributions = [];
         
@@ -75,6 +91,10 @@ class GitHubContributions {
             });
         }
         
+<<<<<<< HEAD
+=======
+        // Store recent activity
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.activity = events.slice(0, 10);
     }
 
@@ -92,6 +112,10 @@ class GitHubContributions {
         let tempStreak = 0;
         let totalContributions = 0;
         
+<<<<<<< HEAD
+=======
+        // Calculate streaks (reverse for chronological order)
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const reversed = [...this.contributions].reverse();
         
         reversed.forEach(day => {
@@ -115,18 +139,33 @@ class GitHubContributions {
         const container = document.getElementById('contributionsGraph');
         if (!container) return;
         
+<<<<<<< HEAD
         const months = {};
         this.contributions.forEach(day => {
             const month = day.date.substring(0, 7);
+=======
+        // Group by months
+        const months = {};
+        this.contributions.forEach(day => {
+            const month = day.date.substring(0, 7); // YYYY-MM
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             if (!months[month]) months[month] = [];
             months[month].push(day);
         });
         
         let html = '<div class="github-graph">';
         
+<<<<<<< HEAD
         Object.entries(months).forEach(([month, days]) => {
             html += `<div class="graph-month">`;
             
+=======
+        // Generate graph cells
+        Object.entries(months).forEach(([month, days]) => {
+            html += `<div class="graph-month">`;
+            
+            // Split into weeks (7 days each)
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
             for (let i = 0; i < days.length; i += 7) {
                 const week = days.slice(i, i + 7);
                 html += `<div class="graph-week">`;
@@ -151,6 +190,10 @@ class GitHubContributions {
         html += '</div>';
         container.innerHTML = html;
         
+<<<<<<< HEAD
+=======
+        // Update stats
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         this.updateStatsUI();
     }
 
@@ -250,6 +293,10 @@ class GitHubContributions {
     }
 
     updateStatsUI() {
+<<<<<<< HEAD
+=======
+        // Update contribution stats
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         const updateElement = (id, value) => {
             const el = document.getElementById(id);
             if (el) el.textContent = value;
@@ -267,13 +314,25 @@ class GitHubContributions {
     async init() {
         await this.fetchContributions();
         
+<<<<<<< HEAD
+=======
+        // Auto-refresh every 5 minutes
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
         setInterval(() => {
             this.fetchContributions();
         }, 5 * 60 * 1000);
     }
 }
 
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     window.githubContributions = new GitHubContributions('dnyftetch');
     window.githubContributions.init();
 });
+=======
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.githubContributions = new GitHubContributions('dnyftetch');
+    window.githubContributions.init();
+});
+>>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
