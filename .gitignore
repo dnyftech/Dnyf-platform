@@ -1,194 +1,4 @@
-<<<<<<< HEAD
-# ==========================================
-# DNYF PLATFORM — GLOBAL GITIGNORE
-# ==========================================
-
-# ------------------------------------------
-# Dependencies
-# ------------------------------------------
-node_modules/
-vendor/
-jspm_packages/
-
-# ------------------------------------------
-# Logs
-# ------------------------------------------
-=======
-# Dependencies
-node_modules/
-vendor/
-
-# Logs
->>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-<<<<<<< HEAD
-lerna-debug.log*
-
-# ------------------------------------------
-# Runtime / PID files
-# ------------------------------------------
-=======
-
-# Runtime data
->>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-<<<<<<< HEAD
-# ------------------------------------------
-# Environment Variables
-# ------------------------------------------
-.env
-.env.*
-!.env.example
-!.env.production.example
-
-# ------------------------------------------
-# Build Outputs
-# ------------------------------------------
-=======
-# Environment variables
-.env
-.env.*
-!.env.example
-
-# Build outputs
->>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
-dist/
-build/
-out/
-coverage/
-.cache/
-.tmp/
-temp/
-<<<<<<< HEAD
-tmp/
-release/
-debug/
-
-# App-specific builds
-apps/web/dist/
-apps/*/dist/
-services/*/dist/
-
-# ------------------------------------------
-# Vite / React / Next / Nuxt
-# ------------------------------------------
-.vite/
-.next/
-.nuxt/
-.svelte-kit/
-
-# ------------------------------------------
-# Android / Mobile
-# ------------------------------------------
-*.apk
-*.aab
-*.ap_
-*.keystore
-*.jks
-
-android/app/build/
-android/.gradle/
-android/local.properties
-
-ios/build/
-ios/Pods/
-ios/.symlinks/
-
-# ------------------------------------------
-# Python
-# ------------------------------------------
-=======
-
-# Vite
-.vite/
-
-# React / Next / Nuxt
-.next/
-.nuxt/
-
-# Android / Mobile
-*.apk
-*.aab
-*.keystore
-android/app/build/
-ios/build/
-
-# Python
->>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-<<<<<<< HEAD
-*.so
-
-venv/
-.venv/
-env/
-ENV/
-
-pip-wheel-metadata/
-
-# ------------------------------------------
-# PHP / Composer
-# ------------------------------------------
-composer.lock
-vendor/
-
-# ------------------------------------------
-# Docker
-# ------------------------------------------
-.docker/
-docker-compose.override.yml
-
-# ------------------------------------------
-# Data / Cache
-# ------------------------------------------
-data/cache/
-cache/
-*.cache
-
-# ------------------------------------------
-# Local Databases
-# ------------------------------------------
-*.sqlite
-*.sqlite3
-*.db
-
-# ------------------------------------------
-# Termux / Linux Shell
-# ------------------------------------------
-=======
-venv/
-.venv/
-env/
-
-# PHP / Composer
-composer.lock
-
-# Termux
->>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
-.termux/
-storage/
-downloads/
-
-<<<<<<< HEAD
-.bash_history
-.zsh_history
-.histfile
-
-# ------------------------------------------
 # IDE / Editors
-# ------------------------------------------
 .vscode/
 .idea/
 
@@ -196,21 +6,15 @@ downloads/
 *.swo
 *.kate-swp
 
-# ------------------------------------------
 # OS Files
-# ------------------------------------------
 .DS_Store
 Thumbs.db
 .directory
 
-# ------------------------------------------
 # Git
-# ------------------------------------------
 *.orig
 
-# ------------------------------------------
 # Secrets / SSH / Certificates
-# ------------------------------------------
 *.pem
 *.key
 *.crt
@@ -221,92 +25,77 @@ Thumbs.db
 
 id_rsa
 id_rsa.pub
-
 id_ed25519
 id_ed25519.pub
 
-# ------------------------------------------
 # Firebase / Google Services
-# ------------------------------------------
 google-services.json
 GoogleService-Info.plist
 firebase-debug.log
 
-# ------------------------------------------
 # AI / ML / Models
-# ------------------------------------------
 *.gguf
 *.bin
 *.safetensors
 models/
 checkpoints/
 
-# ------------------------------------------
 # Archives
-# ------------------------------------------
 *.zip
 *.tar
 *.gz
 *.7z
 *.rar
 
-# ------------------------------------------
 # Temporary / Backup Files
-# ------------------------------------------
 *.bak
 *.tmp
 *.temp
 *.old
 *.backup
+*.cache
 
-# ------------------------------------------
 # Testing
-# ------------------------------------------
 coverage/
 .nyc_output/
 
-# ------------------------------------------
-# Service Environment Files
-# ------------------------------------------
+# Env files
+.env
+.env.*
+!.env.example
+
+# Service env files
 services/**/.env
 apps/**/.env
 
-# ------------------------------------------
-# Miscellaneous
-# ------------------------------------------
-*.local
-*.secret
-=======
-# IDE / Editor
-.vscode/
-.idea/
-*.swp
-*.swo
+# Build outputs
+dist/
+build/
+out/
+coverage/
+.cache/
+.tmp/
 
-# OS files
-.DS_Store
-Thumbs.db
+# Node / JS ecosystem
+node_modules/
 
-# Git
-*.orig
+# Vite / frontend frameworks
+.vite/
+.next/
+.nuxt/
 
-# Secrets / Keys
-*.pem
-*.key
-*.crt
-*.p12
-*.jks
-id_rsa
-id_rsa.pub
-id_ed25519
-id_ed25519.pub
+# Android / Mobile
+*.apk
+*.aab
+android/app/build/
+ios/build/
 
-# Firebase
-google-services.json
-GoogleService-Info.plist
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
 
 # Misc
-*.bak
-*.tmp
-*.cache
->>>>>>> 53a7e44195d2b8194b9b5e13c655f67da0bc4038
+*.local
+*.secret
