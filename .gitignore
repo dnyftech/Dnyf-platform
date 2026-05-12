@@ -1,27 +1,44 @@
+# ==========================================
+# DNYF PLATFORM — GLOBAL GITIGNORE
+# ==========================================
+
+# ------------------------------------------
 # Dependencies
+# ------------------------------------------
 node_modules/
 vendor/
+jspm_packages/
 
+# ------------------------------------------
 # Logs
+# ------------------------------------------
 logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# Runtime data
+# ------------------------------------------
+# Runtime / PID files
+# ------------------------------------------
 pids/
 *.pid
 *.seed
 *.pid.lock
 
-# Environment variables
+# ------------------------------------------
+# Environment Variables
+# ------------------------------------------
 .env
 .env.*
 !.env.example
+!.env.production.example
 
-# Build outputs
+# ------------------------------------------
+# Build Outputs
+# ------------------------------------------
 dist/
 build/
 out/
@@ -29,67 +46,180 @@ coverage/
 .cache/
 .tmp/
 temp/
+tmp/
+release/
+debug/
 
-# Vite
+# App-specific builds
+apps/web/dist/
+apps/*/dist/
+services/*/dist/
+
+# ------------------------------------------
+# Vite / React / Next / Nuxt
+# ------------------------------------------
 .vite/
-
-# React / Next / Nuxt
 .next/
 .nuxt/
+.svelte-kit/
 
+# ------------------------------------------
 # Android / Mobile
+# ------------------------------------------
 *.apk
 *.aab
+*.ap_
 *.keystore
-android/app/build/
-ios/build/
+*.jks
 
+android/app/build/
+android/.gradle/
+android/local.properties
+
+ios/build/
+ios/Pods/
+ios/.symlinks/
+
+# ------------------------------------------
 # Python
+# ------------------------------------------
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.so
+
 venv/
 .venv/
 env/
+ENV/
 
+pip-wheel-metadata/
+
+# ------------------------------------------
 # PHP / Composer
+# ------------------------------------------
 composer.lock
+vendor/
 
-# Termux
+# ------------------------------------------
+# Docker
+# ------------------------------------------
+.docker/
+docker-compose.override.yml
+
+# ------------------------------------------
+# Data / Cache
+# ------------------------------------------
+data/cache/
+cache/
+*.cache
+
+# ------------------------------------------
+# Local Databases
+# ------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+
+# ------------------------------------------
+# Termux / Linux Shell
+# ------------------------------------------
 .termux/
 storage/
 downloads/
 
-# IDE / Editor
+.bash_history
+.zsh_history
+.histfile
+
+# ------------------------------------------
+# IDE / Editors
+# ------------------------------------------
 .vscode/
 .idea/
+
 *.swp
 *.swo
+*.kate-swp
 
-# OS files
+# ------------------------------------------
+# OS Files
+# ------------------------------------------
 .DS_Store
 Thumbs.db
+.directory
 
+# ------------------------------------------
 # Git
+# ------------------------------------------
 *.orig
 
-# Secrets / Keys
+# ------------------------------------------
+# Secrets / SSH / Certificates
+# ------------------------------------------
 *.pem
 *.key
 *.crt
+*.csr
 *.p12
+*.pfx
 *.jks
+
 id_rsa
 id_rsa.pub
+
 id_ed25519
 id_ed25519.pub
 
-# Firebase
+# ------------------------------------------
+# Firebase / Google Services
+# ------------------------------------------
 google-services.json
 GoogleService-Info.plist
+firebase-debug.log
 
-# Misc
+# ------------------------------------------
+# AI / ML / Models
+# ------------------------------------------
+*.gguf
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# ------------------------------------------
+# Archives
+# ------------------------------------------
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+
+# ------------------------------------------
+# Temporary / Backup Files
+# ------------------------------------------
 *.bak
 *.tmp
-*.cache
+*.temp
+*.old
+*.backup
+
+# ------------------------------------------
+# Testing
+# ------------------------------------------
+coverage/
+.nyc_output/
+
+# ------------------------------------------
+# Service Environment Files
+# ------------------------------------------
+services/**/.env
+apps/**/.env
+
+# ------------------------------------------
+# Miscellaneous
+# ------------------------------------------
+*.local
+*.secret
